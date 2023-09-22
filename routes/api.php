@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\QuizController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,10 @@ Route::middleware(['auth:sanctum'])->group(function () {
     Route::post('/user/update', [UserController::class, 'update']);
     Route::post('/user/change_password', [UserController::class, 'change_password']);
     Route::post('/logout', [UserController::class, 'logout']);
+    
+    Route::get('/quiz/index', [QuizController::class, 'index']);
+    Route::post('/quiz/store', [QuizController::class, 'store']);
+    Route::get('/quiz/show/{quiz_id}', [QuizController::class, 'show']);
+    Route::post('/quiz/update/{quiz_id}', [QuizController::class, 'update']);
+    Route::post('/quiz/delete/{quiz_id}', [QuizController::class, 'destroy']);
 });

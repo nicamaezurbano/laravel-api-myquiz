@@ -197,7 +197,7 @@ class UserController extends Controller
 
             return response()->json([
                 'data' => $user,
-                'message' => 'You name has successfully changed.'
+                'message' => 'Your name has successfully changed.'
             ], 200);
 
         } catch (\Exception $e) {
